@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Monthly Salary of a Data Scientist</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" name="experience" placeholder="Experience in Years" required="required" />
+      <input type="number" name="degree_percentage" placeholder="Degree Percentage" req:uired="required" />
+		  <input type="text" name="post_graduation" placeholder="Post Graduation - Yes/No" required="required" />
+      <input type="text" name="iit_nit" size="30" placeholder="Are you from IIT/NIT - Yes/No" required="required" />
+      <input type="text" name="designation" size="60" placeholder="Your Designation - Business Analyst/Data Scientist/Sr Data Scientist" required="required" />
+      <input type="text" name="aws_gcp_azure_ml_ops" size="40" placeholder="Working with MLOps on GCP/AWS/Azure - Yes/No" required="required" />
+      <input type="text" name="tableau_powerbi" size="40" placeholder="Working with Tableau/PowerBI - Yes/No" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
